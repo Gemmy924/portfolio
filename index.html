@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>＜TOP＞ S.Koyasu Portfolio</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <!-- <a href="#"><img src="./img/logo_white.png" alt="logo"></a> -->
+ <header>
+    <div id="header">
+        <span class="balloon">
+            <a href="https://ja.wikipedia.org/wiki/DoggoLingo" target="_blank">
+            Henlo
+           </a>
+       </span>
+        <nav id="g-navi">
+            <ul>
+                <li class="li_1"><a href="#">＜TOP＞</a></li>
+                <li class="li_2"><a href="#About">＜No.1＞</a></li>
+                <li class="li_3"><a href="#Works">＜No.2＞</a></li>
+                <li class="dog">
+                    <!-- Circle Text Code -->
+                    <div id="Circle-Txt">
+                        Be Audacious,&nbsp;Do Freely.
+                    </div>
+                </li>
+                <li class="li_5"><a href="#Contact">＜No.3＞</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="catchcopy">
+        <h2>＜Be Audacious,＞</h2>
+        <h1 class="TextTyping">SHIGEMI KOYASU / Portfolio</h1>
+        <h2>＜Do Freely.＞</h2> 
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/circletype@2.3.0/dist/circletype.min.js"></script>
+    <script>
+        let circle = new CircleType(document.getElementById('Circle-Txt'));
+        circle.raduis(360);
+    </script>
+</header>
+    <div class="openbtn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+<main>
+    <!-- about -->
+    <section id="About">
+        <div class="title1">
+            <h3 class="TextTyping">＜ABOUT＞</h3>
+        </div>
+        <div class="container">
+            <div>
+                <h2>＜自衛官・葬祭・農家・調理・事務・酪農を経験＞</h2>
+                <p class="text_area">
+                    学卒業後は公務員や葬祭のサービス業に就き、ワーキングホリデーでオーストラリアとイギリス、フィリピンの語学学校を通じで日本社会以外の価値観を知るに至りました。<br>
+                    そして現在、子供の頃から好きだった「作る」仕事がしたと思い、WEBフロントエンドを学びWEBデザインやサイト構築、コーディングなどの職業を志望しています。<br>
+                    特に世界の都市と地方に住んだ経験から、地方からのより良いマーケットの拡充や仕組み作りに参加したいと考えています。
+                </p>
+            </div>
+            <div class="btn_container">
+                <a href="./about/about.html" class="btn06 btnarrow1" target="_blank">経歴もっと詳しく</a>
+            </div>
+            <div class="skills">
+                <h4><span>＜Skills＞</span></h4>
+                <p>HTML&nbsp;/&nbsp;CSS&nbsp;/&nbsp;FIGMA&nbsp;/&nbsp;CLIP STUDIO PAINT PRO</p>
+                <P> ★★★★☆</P>
+                <p>JAVASCRIPT&nbsp;/&nbsp;WORDPRESS</p>
+                <p> ★★★☆☆</p>
+                <p>ILLUSTORATER&nbsp;/&nbsp;EXCEL VBA</p>
+                <p> ★★☆☆☆</p>
+            </div>
+        </div>
+    </section>
+    <!-- works -->
+    <section id="Works">
+        <div class="title2">
+            <h3 class="TextTyping">＜WORKS＞</h3>
+        </div>
+        <div class="container">
+            <div>
+                <h2>＜勉強、趣味、職業＞</h2>
+                <p>以下は、職業訓練校にて学んだ成果物等</p>
+            </div>
+            <div>
+                <p>WEBフロントエンド構築科にて。チーム制作で1つのサイトを作った。</p>
+                <div class="btn_container2">
+                    <a href="./works/event_daytime/daytime.html" class="btn06 btnarrow2" target="_blank">きたかんとう水族館</a>
+                </div>
+            <div>
+                <p>イラストのジャンルは何でも。描画のために覚えた構図で写真も。</p>
+                <div class="btn_container2">
+                    <a href="./works/syumi/works2.html" class="btn06 btnarrow2" target="_blank">趣味のイラスト・写真</a>
+                </div>
+            </div>
+            <div>
+                <p>語学学習に「あればいいな」・ 気象頭痛のための気圧ログ</p>
+                <div class="btn_container2">
+                    <a href="./works/app/app.html" class="btn06 btnarrow2" target="_blank">アプリ</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- contact -->
+    <section id="Contact">
+        <div class="title3">
+            <h3 class="TextTyping">＜CONTACT＞</h3>
+        </div>
+        <div class="container">
+            <h2>＜お問合せはお気軽にどうぞ！＞</h2>
+            <form class="contact-form row">
+                <div class="form-field col x-50">
+                    <input id="name" class="input-text js-input" type="text" required>
+                    <label class="label" for="name">＜Name＞</label>
+                </div>
+                <div class="form-field col x-50">
+                    <input id="email" class="input-text js-input" type="email" required>
+                    <label class="label" for="email">＜E-mail＞</label>
+                </div>
+                <div class="form-field col x-100">
+                    <input id="message" class="input-text js-input" type="text" required>
+                    <label class="label" for="message">＜Message＞</label>
+                </div>
+                <div class="btn_container3">
+                    <a href="#" class="btn07 btnarrow3" type="submit" value="Submit">SEND</a>
+                </div>
+            </form>
+        </div>
+    </section>
+</main>
+    
+<footer>
+    <small>© Shigemi Koyasu All rights reserved.</small>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/typewrite.js"></script>
+</body>
+</html>
