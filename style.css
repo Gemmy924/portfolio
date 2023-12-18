@@ -322,6 +322,10 @@ section{
   flex-direction: column;
 }
 
+.seikabutu{
+  display: flex;
+}
+	
 #Works .container div p{
   margin-bottom: 20px;
 }
