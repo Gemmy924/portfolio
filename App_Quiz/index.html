@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <main>
+       <main>
+      <div class="ichimatsu">
         <div class="top">
             <div id="explain">
               <p>だれかがねこのごはんをたべちゃった！</p>
@@ -19,20 +20,21 @@
         </div>
     
 
-    <div id="ansArea">
-        <!-- 問題文 -->
-        <div id="choices">
+        <div id="ansArea">
+            <!-- 問題文 -->
+            <div id="choices">
             <!------- 選択肢が表示される場所 --------->
-        </div>
-        <!-- <div id="food">
-          <img src="./img/food1.png" alt="food" id="food1">
-        </div> -->
-        <!-- 正答数 -->
-        <p id="answer"></p>
-        <p id="sponser"></p>
-        <!-- タイマー -->
-        <p id="countDown"></p>
-    </div>
+            </div>
+            <!-- タイマー -->
+            <p id="countDown"></p>
+
+            <!-- 正答数 -->
+            <div class="end">
+              <p id="answer"></p>
+              <p id="sponser"></p>
+            </div>
+          </div>
+      </div>
     </main>
     <script src="./script.js"></script>
     
