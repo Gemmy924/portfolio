@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S.Koyasu Portfolio</title>
+    <link rel="icon" href="./fabicon1.png">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body class="ichimatsu">
+    <!-- ローディング用HTML -->
+    <div class="loading" id="loading">
+        <div class="spinner"><img src="./img/loading2.png" alt="loading"></div>
+    </div>
+<!-- ローディング用HTML ここまで -->
+
+<header  id="Top">
+    <nav class="header_nav">
+<!-- jQueryを使い、ボタンをクリックしたら、ボタンとナビゲーションにそれぞれクラスを付与する。 -->
+<!-- クラスが付与されたらCSSのアニメーションを使いボタンには開閉のアイコン変化の動きをつけ、 -->
+<!-- ナビゲーションの背景を透過状態から不透明へ変更、ボックスの重なりを最背面から最前面に移動して出現させる。 -->
+        <div  id="navi">
+            <div class="openbtn" id="target">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div id="nav_target">
+                <ul>
+                    <li class="hamberger_menu"><h2>MENU</h2></li>
+                    <li class="hamberger_menus"><a href="#Top">TOP</a></li>
+                    <li class="hamberger_menus"><a href="#About">ABOUT</a></li>
+                    <li class="hamberger_menus"><a href="#Works">WORKS</a></li>
+                    <li class="hamberger_menus"><a href="#Contact">CONTACT</a></li>
+                    <li class="hamberger_bottom"><small>open<br>09:00 - 20:00</small></li>
+                </ul>
+           </div>
+        </div>
+        <ul class="nav_menu">
+            <li class="top_contact"><a href="../index.html#Contact">CONTACT</a></li>
+            <li>
+                <a href="https://www.instagram.com/shigemi_is_studying/" class="btn">
+                    <img src="./img/Instagram_Glyph_White1.png" alt="instagram">
+                    <img src="./img/Instagram_Glyph_White2.png" alt="instagram">
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="top_image">
+    <img src="./name.png" alt="namae">
+
+    <img src="./img/tv.gif" alt="gif">
+
+    </div>
+    
+</header>
+ 
+<main>
+    <!-- about -->
+    <section id="About">
+        <div class="title1">
+            <h3 class="TextTyping">ABOUT</h3>
+        </div>
+        <div class="container">
+            <div class="subtitle">
+                <h2>自衛官・葬祭・農家・調理・事務・酪農を国内外で経験</h2>
+            </div>
+                <p class="text_area">
+                    &nbsp; 現在、WEBフロントエンドを学びWEBデザインやサイト構築、コーディングなどの職業を志望しています。
+                </p>
+            <div class="btn_container">
+                <a href="./about/about.html" class="btn06 btnarrow1" target="_blank">経歴もっと詳しく</a>
+            </div>
+
+            <div class="skills">
+                <div id="bar-graph" class="content">
+                    <h2><span>Skills</span></h2>
+                    <p class="text_area">
+                        &nbsp; エンジニアを目指すべく下記以外の言語の習得もする予定です。
+                    </p>
+    
+                    <div class="bar-graph-wrap">
+                      <div class="graph blue">
+                        <span class="name">HTML&nbsp;/&nbsp;CSS&nbsp;/&nbsp;FIGMA&nbsp;/&nbsp;CLIP STUDIO PAINT PRO</span>
+                        <span class="number">★★★★☆</span>
+                      </div>
+                      <div class="graph red">
+                        <span class="name">JAVASCRIPT&nbsp;/&nbsp;WORDPRESS</span>
+                        <span class="number">★★★☆☆</span>
+                      </div>
+                      <div class="graph green">
+                        <span class="name">ILLUSTORATER&nbsp;/&nbsp;EXCEL VBA</span>
+                        <span class="number">★★☆☆☆</span>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- works -->
+    <section id="Works">
+        <div class="title2">
+            <h3 class="TextTyping">WORKS</h3>
+        </div>
+        <div class="container">
+            <div>
+                <h2>勉強、趣味、職業</h2>
+                <p>以下は、WEBフロントエンド構築科にて学んだ成果物等</p>
+            </div>
+            <div>
+                <p>チーム制作の架空水族館WEBサイトと子供向けクイズアプリ。</p>
+                <div class="seikabutu">
+                    <div class="btn_container2">
+                        <a href="./works/event_daytime/daytime.html" class="btn06 btnarrow2" target="_blank">きたかんとう水族館</a>
+                    </div>
+                    <div class="btn_container2">
+                        <a href="./App_Quiz/index.html" class="btn06 btnarrow2" target="_blank">だれがねこのごはんをたべたの？</a>
+                    </div>
+                </div>
+            </div> 
+            <div>
+                <p>イラストのジャンルは何でも。描画のために覚えた構図で写真も。</p>
+                <div class="btn_container2">
+                    <a href="./works/syumi/works2.html" class="btn06 btnarrow2" target="_blank">趣味のイラスト・写真</a>
+                </div>
+            </div>
+            <div>
+                <p>語学学習に「あればいいな」・ 気象頭痛のための気圧ログ</p>
+                <div class="btn_container2">
+                    <a href="./works/app/app.html" class="btn06 btnarrow2" target="_blank">アプリ</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- contact -->
+    <section id="Contact">
+        <div class="title3">
+            <h3 class="TextTyping">CONTACT</h3>
+        </div>
+        <div class="container">
+            <h2>お問合せはお気軽にどうぞ！</h2>
+            <form class="contact-form row">
+                <div class="form-field col x-50">
+                    <input id="name" class="input-text js-input" type="text" required>
+                    <label class="label" for="name">＜Name＞</label>
+                </div>
+                <div class="form-field col x-50">
+                    <input id="email" class="input-text js-input" type="email" required>
+                    <label class="label" for="email">＜E-mail＞</label>
+                </div>
+                <div class="form-field col x-100">
+                    <input id="message" class="input-text js-input" type="text" required>
+                    <label class="label" for="message">＜Message＞</label>
+                </div>
+                <div class="btn_container3">
+                    <a href="#" class="btn07 btnarrow3" type="submit" value="Submit">SEND</a>
+                </div>
+            </form>
+        </div>
+    </section>
+</main>
+    
+<footer>
+    <small>© Shigemi Koyasu All rights reserved.</small>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/typewrite.js"></script>
+
+</body>
+</html>
