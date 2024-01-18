@@ -382,6 +382,69 @@ header{
 }
 
 
+/* news, お知らせ、新着、更新情報 */
+
+
+.news-list{
+  list-style: none outside;
+  padding: 50px;
+  background-color: #ffffff;
+  border: #02ACA9 3px solid;
+  border-radius: 96px 96px 96px 96px / 57px 57px 57px 57px;
+  width: 80vw;
+  margin: 24px auto;
+}
+.news-list .item {
+  display: flex;
+  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  text-decoration: none;
+  border-bottom: 1px solid #CCC;
+  padding: 20px 20px;
+}
+.news-list .item:first-child a{
+  border-top: 1px solid #CCC;
+}
+.news-list .item .date{
+  margin: 0;
+  min-width: 140px;
+  font-size: 16px;
+  color: #02ACA9;
+  padding: 0 20px 0 0;
+}
+.news-list .item .category{
+  margin: 0 30px;
+  text-align: center;
+  min-width: 100px;
+  max-height: 24px;
+  border: 1px solid #02ACA9;
+  border-radius: 25px 25px 25px 25px / 25px 25px 25px 25px;
+}
+.news-list .item .category span{
+  display: inline-block;
+  padding: 5px 20px;
+  font-size: 12px;
+  line-height: 1;
+}
+.news-list .item .title{
+  margin: 0;
+  width: 100%;
+}
+/* .news-list .item a:hover .title{
+  color: #F0679B;
+} */
+
+@media screen and (max-width: 767px){
+.news-list .item a{
+  flex-wrap: wrap;
+}
+.news-list .item .date{
+  min-width: 100px;
+}
+.news-list .item .title{
+  margin-top: 10px;
+}
+}
 
 
 /************************ ------ここから共有----- *********************************/
