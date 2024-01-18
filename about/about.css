@@ -1,27 +1,125 @@
 @charset "utf-8";
-
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+html{
+  scroll-behavior: smooth;
+  background-image: linear-gradient(45deg, #D1FBFA 25%, transparent 25%, transparent 75%, #D1FBFA 75%),
+      linear-gradient(45deg, #D1FBFA 25%, transparent 25%, transparent 75%, #D1FBFA 75%); /* 市松模様になるようグラデーションで単色を入れる */
+  background-position: 0 0, 75px 75px;  /* 「0 0」と1マス（1色）の大きさ「30px 30px」をそれぞれ指定 */
+  background-size: 150px 150px;           /* 1マス分の倍の大きさを指定「60px 60px」 */
+  background-color: #FFF; 
+}
+/* font */
+p, li{
+  color: #02ACA9;
+  text-decoration: none;
+  list-style: none;
+}
+h2, h4, h3{
+  color: #F0679B;
+}
+
+/***** インスタアイコン *******/
+.btn {
+	position: relative;
+	width: 130px;
+	height: 130px;
+	/* margin: 0 auto; */
+	display: block;
+	border-radius: 12px;
+	overflow: hidden;
+	cursor: pointer;
+}
+.btn img {
+    width: 30%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+  display: block;
+	-webkit-transition: .4s ease-in-out;
+	transition: .4s ease-in-out;
+}
+.btn:hover img:nth-of-type(2) {
+  -webkit-transform: translate(-50%, -50%) rotate(720deg) !important;
+	transform: translate(-50%, -50%) rotate(720deg) !important;
+  width: 0;
+}
+/****************************************************************************************/
+#navi{
+  animation: hambergernone 3s linear;
+}
+@keyframes hambergernone {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.1;
+  }
+  25% {
+    opacity: 1;
+  }
+  75%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+/* header */
+.top_contact a{
+  list-style: none;
+  text-decoration: none;
+  transition: color 0.3s;
+  color: #02ACA9;
+  font-weight: bold;
+}
+
+.top_contact a:hover{
+  color: #FFA7CF;
+}
+
+.header_nav{
+    background-color: #A6E0E2;
+    height: 10vh;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav_menu{
+    display: flex;
+    align-items: center;
+}
 
 /******* hamberger manu *********/
 /*========= ナビゲーションのためのCSS ===============*/
 #nav_target{
-    /* はじめは透過0 */
-	opacity: 0;
+	opacity: 0;    /* はじめは透過0 */
     /*position:fixed;にし、z-indexの数値を小さくして最背面へ*/
     position:fixed;
 	z-index: -1;
     list-style: none;
-    background: url(./kasakiri.png);
-    background-repeat: repeat-y;
-    height: 100vh;
-    width: 20vw;
+    height: 90vh;
+    width: 70vw;
     /*動き*/
 	transition: all 0.3s;
+  background: url(../img/backgraund.jpg);
+  background-size: contain;
     }
+
+    @media screen and (min-width:900px){
+      #nav_target{
+        max-width: 20vw;
+      }
+      }
 
 /*アクティブクラスがついたら透過なしにして最前面へ*/
 #nav_target.panelactive{
@@ -30,13 +128,36 @@
 }
 
 /*ナビゲーション*/
+.hamberger_menu{
+  font-size: 30px;
+  font-family: 'Comic Sans MS', sans-serif;
+  color: #F0679B;
+  border-radius: 80px 80px 0px 0px / 50px 50px 0px 0px;
+    border: #F0679B double 5px;
+    margin-bottom: 100px;
+    padding: 20px;
+}
+.hamberger_bottom{
+  border-radius: 0px 0px 96px 96px / 0px 0px 57px 57px;
+  /* 96px 96px  / 57px 57px  */
+    border: #F0679B solid 2px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
 #nav_target ul {
     display: none;
     /* ナビゲーション天地中央揃え */
     position: absolute;
+    width: 80%;
+    height: 90%;
     top:50%;
     left:50%;
     transform: translate(-50%,-50%);
+    background: white;
+    border-radius: 96px 96px 96px 96px / 57px 57px 57px 57px;
+    border: #F0679B solid 5px;;
 }
 
 #nav_target.panelactive ul {
@@ -46,37 +167,44 @@
 /*リストのレイアウト設定*/
 #nav_target ul li{
 	list-style: none;
-    text-align: center;
+  text-align: center;
+}
+#nav_target ul .hamberger_menus{
+  text-align: center;
+  border-bottom: #000 dotted 2px;
+  width: 70%;
+  margin: 10px auto;
 }
 
 #nav_target ul li a{
-	color: #180070;
-	text-decoration: none;
+	color: #000000;
+  text-decoration: none;
 	padding:10px;
 	display: block;
 	text-transform: uppercase;
 	letter-spacing: 0.1em;
 	font-weight: bold;
-    font-family: 'Constantia', sans-serif;
 }
 
 #nav_target ul li a:hover{
-    color: rgb(125, 0, 0);
+    color: #02ACA9;
 }
 
 /* メニュー箱とバツの装飾と位置 */
 .openbtn{
+  background-color: #FFA7CF;
   width: 50px;
   height: 50px;
   border-radius: 5px;
-  z-index: 999;
   cursor: pointer;
   position:fixed;
   top:10px;
-  left: 10px;
-  z-index: 999;
-  background:#3a4371;
+  left: 3px;
+  z-index: 9999;
+  margin-left: 2%;
+  /* visibility: visible; */
 }
+
 /* 横線の位置 */
 .openbtn span:nth-child(1){
     top: 15px;
@@ -94,18 +222,18 @@
     transition: all .4s;
     position: absolute;
     left: 14px;
-    height: 3px;
+    height: 4px;
     border-radius: 2px;
-    background-color: #fff;
-    width: 45%;
+    background-color: rgb(255, 255, 255);
+    width: 50%;
 }
 /* 回転と位置 */
 /* 一本目 */
 .active span:nth-child(1){
     transform: translateY(6px) rotate(-45deg);
-    width: 30%;
-    top: 18px;
-    left: 18px;
+    width: 50%;
+    top: 19px;
+    left: 15px;
 }
 /** 二本目を透明にする **/
 .active span:nth-child(2){
@@ -114,16 +242,40 @@
 /*** 三本目 ***/
 .active span:nth-child(3){
     transform: translateY(-6px) rotate(45deg);
-    width: 30%;
-    left: 18px;
+    width: 50%;
+    left: 15px;
+}
+/****************************************************************************************/
+
+/* top */
+
+
+
+
+
+/* -----footer------ */
+footer{
+  background-color: #A6E0E2;
+  height: 5vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #F0679B;
+  font-weight: bold;
 }
 /****** こんてんつたいとる *****/
+
 
 .title h3{
     width: 200px;
     padding: 20px;
-    border: solid 1px #000000;
+    margin: 5% auto;
+    border: solid 5px #A6E0E2;
+    border-radius: 50px 50px 50px 50px;
     text-align: center;
+    background: #fd94c3;
+    color: white;
   }
 .textbox{
     padding: 20px;
@@ -135,14 +287,14 @@
 	display: none;
 }
 /*文字列後ろの線の設定*/
-.TextTyping::after {
+/* .TextTyping::after {
  	content: "|";
 	animation: typinganime .8s ease infinite;
 }
 @keyframes typinganime{
 	from{opacity:0}
 	to{opacity:1}
-}
+} */
 /* -----typing風ここまで------ */
 /****** こんてんつ ******/
 .textbox div{
@@ -272,18 +424,3 @@ section{
         grid-column: 1 / 3;
     }
 }
-
-
-/* -----footer------ */
-footer{
-    background-color: rgb(51, 157, 67);
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    z-index: 99999;
-  }
