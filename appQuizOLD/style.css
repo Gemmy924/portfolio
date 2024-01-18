@@ -1,0 +1,115 @@
+@charset "utf-8";
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* normal */
+@font-face {
+    font-family: "myfont";
+    src: url("./font_honyajire/HonyaJi-Re.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+  /* bold */
+  @font-face {
+    font-family: "myfont";
+    src: url("./komadori_mini/komadori_mini/komadori-mini.otf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+  }
+  /* italic */
+  @font-face {
+    font-family: "myfont";
+    src: url("./komadori_mini/komadori_mini/komadori-mini.otf") format("truetype");
+    font-weight: normal;
+    font-style: italic;
+  }
+  
+  /* 背景 */
+  body {
+    background-image: url(./img/haikei.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  main{
+    /* background-color: rgba(251, 255, 16, 0.4); */
+    height: 100vh;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    min-width: 320px;
+    position: relative;
+  }
+
+  .top{
+    position: absolute;
+    top: 10%;
+    left: 25%;
+  }
+  
+#ansArea{
+  position: absolute;
+  top: 10%;
+} 
+#choices img{
+    width: 100%;
+    margin: 0 5%;
+}
+
+#answer{
+  position: absolute;
+  top: 65%;
+  left: 55%;
+  width: 600px;
+  padding: auto;
+  outline: dotted 5px rgb(255, 255, 255);
+  font-family: myfont;
+  border-radius: 10%;
+  font-size: 1.8rem;
+  color: #000000;
+  text-align: center;
+  line-height: 3.0rem;
+  margin: 20px auto;
+}
+
+#explain, h2, #countDown{
+    width: 600px;
+    padding: auto;
+    outline: dotted 5px rgb(255, 255, 255);
+    font-family: myfont;
+    border-radius: 10%;
+    font-size: 1.8rem;
+    color: #000000;
+    text-align: center;
+    line-height: 3.0rem;
+    margin: 0px auto;
+  }
+  
+  #ansStartButton{
+      width: auto;
+      overflow:visible;
+      padding:0;
+      margin:0;
+      background:none;
+      border:0;
+      font-size:0;
+      line-height:0;
+      cursor: url(./11zon_cursol.cur), default;
+  }
+  
+  #ansStartButton img{
+    width: 80%;
+  }
+  
+img, #ansStartButton{
+    cursor: url(./11zon_cursol.cur), default;
+}
