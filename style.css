@@ -504,9 +504,9 @@ section{
   /* text-align: center; */
  }
 
-/*.container div{
-  padding-bottom: 2%;
-} */
+.container{
+  width: 500px;
+}
 /* 
 .container h2{
   display: block;
@@ -522,6 +522,7 @@ section{
 
 .seikabutu{
   display: flex;
+  flex-wrap: wrap;
 }
 
 #Works .container div p{
