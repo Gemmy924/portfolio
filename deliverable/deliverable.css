@@ -1,0 +1,286 @@
+@charset "utf-8";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+  scroll-behavior: smooth;
+  background-image: linear-gradient(45deg, #D1FBFA 25%, transparent 25%, transparent 75%, #D1FBFA 75%),
+      linear-gradient(45deg, #D1FBFA 25%, transparent 25%, transparent 75%, #D1FBFA 75%); /* 市松模様になるようグラデーションで単色を入れる */
+  background-position: 0 0, 75px 75px;  /* 「0 0」と1マス（1色）の大きさ「30px 30px」をそれぞれ指定 */
+  background-size: 150px 150px;           /* 1マス分の倍の大きさを指定「60px 60px」 */
+  background-color: #FFF; 
+}
+/* font */
+p, li{
+  color: #02ACA9;
+  text-decoration: none;
+  list-style: none;
+}
+h2, h4, h3{
+  color: #F0679B;
+}
+.intro{
+  text-align: center;
+  margin-bottom: 50px;
+}
+/***** インスタアイコン *******/
+.btn {
+	position: relative;
+	width: 130px;
+	height: 130px;
+	display: block;
+	border-radius: 12px;
+	overflow: hidden;
+	cursor: pointer;
+}
+.btn img {
+  width: 30%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+  display: block;
+	-webkit-transition: .4s ease-in-out;
+	transition: .4s ease-in-out;
+}
+.btn:hover img:nth-of-type(2) {
+  -webkit-transform: translate(-50%, -50%) rotate(720deg) !important;
+	transform: translate(-50%, -50%) rotate(720deg) !important;
+  width: 0;
+}
+
+/* header-top */
+.top_contact a{
+  list-style: none;
+  text-decoration: none;
+  transition: color 0.3s;
+  color: #02ACA9;
+  font-weight: bold;
+}
+
+.top_contact a:hover{
+  color: #FFA7CF;
+}
+
+.header_nav{
+    background-color: #A6E0E2;
+    height: 10vh;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav_menu{
+    display: flex;
+    align-items: center;
+}
+
+/******* hamberger manu *********/
+/*========= ナビゲーションのためのCSS ===============*/
+#navi{
+  animation: hambergernone 5s linear;
+}
+@keyframes hambergernone {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.1;
+  }
+  25% {
+    opacity: 1;
+  }
+  75%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+#nav_target{
+	opacity: 0;    /* はじめは透過0 */
+    /*position:fixed;にし、z-indexの数値を小さくして最背面へ*/
+    position:fixed;
+	z-index: -1;
+    list-style: none;
+    height: 90vh;
+    width: 70vw;
+    /*動き*/
+	transition: all 0.2s;
+    }
+
+    @media screen and (min-width:900px){
+      #nav_target{
+        max-width: 20vw;
+      }
+      }
+
+/*アクティブクラスがついたら透過なしにして最前面へ*/
+#nav_target.panelactive{
+	opacity: 1;
+    z-index: 99;
+}
+
+/*ナビゲーション*/
+.hamberger_menu{
+    margin-bottom: 100px;
+    padding: 20px;
+}
+#nav_target ul {
+    display: none;
+    /* ナビゲーション天地中央揃え */
+    position: absolute;
+    width: 80%;
+    height: 90%;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+} 
+#nav_target.panelactive ul {
+    display: block;
+}
+
+/*リストのレイアウト設定*/
+#nav_target ul li{
+	list-style: none;
+  text-align: center;
+}
+#nav_target ul .hamberger_menus img{
+  text-align: center;
+  width: 70%;
+}
+
+/* メニュー箱とバツの装飾と位置 */
+.openbtn{
+  background-color: #FFA7CF;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  z-index: 999;
+  cursor: pointer;
+  position:fixed;
+  top:10px;
+  left: 3px;
+  z-index: 999;
+  margin-left: 2%;
+}
+/* 横線の位置 */
+.openbtn span:nth-child(1){
+    top: 15px;
+}
+.openbtn span:nth-child(2){
+    top: 23px;
+}
+.openbtn span:nth-child(3){
+    top: 31px;
+}
+/* spanで作るバツ */
+.openbtn span{
+    /* spanタグは高さが指定出来ないインライン要素なので */
+    display: inline-block;
+    transition: all .4s;
+    position: absolute;
+    left: 14px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: rgb(255, 255, 255);
+    width: 50%;
+}
+/* 回転と位置 */
+/* 一本目 */
+.active span:nth-child(1){
+    transform: translateY(6px) rotate(-45deg);
+    width: 50%;
+    top: 19px;
+    left: 15px;
+}
+/** 二本目を透明にする **/
+.active span:nth-child(2){
+    opacity: 0;
+}
+/*** 三本目 ***/
+.active span:nth-child(3){
+    transform: translateY(-6px) rotate(45deg);
+    width: 50%;
+    
+    left: 15px;
+}
+
+/************************ ------ここから共有----- *********************************/
+.title1 h3{
+  width: 200px;
+  padding: 20px;
+  margin: 5% auto;
+  border: solid 5px #A6E0E2;
+  border-radius: 50px 50px 50px 50px;
+  text-align: center;
+  background: #fd94c3;
+  color: white;
+}
+main{
+  background-color: #ffffff;
+  border: #02ACA9 3px solid;
+  border-radius: 96px 96px 96px 96px / 57px 57px 57px 57px;
+  width: 90vw;
+  margin: 0 auto;
+  }
+  @media screen and (min-width: 900px) {
+    main{
+        margin: 5% auto;
+    }
+  }
+
+section{
+  width: 100%;   
+}
+@media screen and (max-width: 1025px){
+  section{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10% auto;
+  margin: 10% auto;
+  }
+}
+
+.content{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: #FFA7CF dotted 3px;
+  width: 70vw;
+  margin: 30px auto;
+  padding: 50px;
+}
+
+.image{
+  float: left;
+  width: 40VW;
+  margin-right: 50px;
+}
+.explain{
+  float: right;
+  width: 60vw;
+  line-height: 40px;
+}
+
+
+
+/* -----footer------ */
+footer{
+  background-color: #A6E0E2;
+  height: 5vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #F0679B;
+  font-weight: bold;
+}

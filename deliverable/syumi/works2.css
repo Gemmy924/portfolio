@@ -1,0 +1,434 @@
+@charset "utf-8";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+  scroll-behavior: smooth;
+  background-image: linear-gradient(45deg, #D1FBFA 25%, transparent 25%, transparent 75%, #D1FBFA 75%),
+      linear-gradient(45deg, #D1FBFA 25%, transparent 25%, transparent 75%, #D1FBFA 75%); /* 市松模様になるようグラデーションで単色を入れる */
+  background-position: 0 0, 75px 75px;  /* 「0 0」と1マス（1色）の大きさ「30px 30px」をそれぞれ指定 */
+  background-size: 150px 150px;           /* 1マス分の倍の大きさを指定「60px 60px」 */
+  background-color: #FFF; 
+}
+/* font */
+p, li{
+  color: #02ACA9;
+  text-decoration: none;
+  list-style: none;
+}
+h2, h4, h3{
+  color: #F0679B;
+}
+
+/***** インスタアイコン *******/
+.btn {
+	position: relative;
+	width: 130px;
+	height: 130px;
+	/* margin: 0 auto; */
+	display: block;
+	border-radius: 12px;
+	overflow: hidden;
+	cursor: pointer;
+}
+.btn img {
+    width: 30%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+  display: block;
+	-webkit-transition: .4s ease-in-out;
+	transition: .4s ease-in-out;
+}
+.btn:hover img:nth-of-type(2) {
+  -webkit-transform: translate(-50%, -50%) rotate(720deg) !important;
+	transform: translate(-50%, -50%) rotate(720deg) !important;
+  width: 0;
+}
+/****************************************************************************************/
+#navi{
+  animation: hambergernone 3s linear;
+}
+@keyframes hambergernone {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.1;
+  }
+  25% {
+    opacity: 1;
+  }
+  75%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+/* header */
+.top_contact a{
+  list-style: none;
+  text-decoration: none;
+  transition: color 0.3s;
+  color: #02ACA9;
+  font-weight: bold;
+}
+
+.top_contact a:hover{
+  color: #FFA7CF;
+}
+
+.header_nav{
+    background-color: #A6E0E2;
+    height: 10vh;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav_menu{
+    display: flex;
+    align-items: center;
+}
+
+/******* hamberger manu *********/
+/*========= ナビゲーションのためのCSS ===============*/
+#nav_target{
+	opacity: 0;    /* はじめは透過0 */
+    /*position:fixed;にし、z-indexの数値を小さくして最背面へ*/
+    position:fixed;
+	z-index: -1;
+    list-style: none;
+    height: 90vh;
+    width: 70vw;
+    /*動き*/
+	transition: all 0.3s;
+  background: url(../../img/backgraund.jpg);
+  background-size: contain;
+    }
+
+    @media screen and (min-width:900px){
+      #nav_target{
+        max-width: 20vw;
+      }
+      }
+
+/*アクティブクラスがついたら透過なしにして最前面へ*/
+#nav_target.panelactive{
+	opacity: 1;
+    z-index: 99;
+}
+
+/*ナビゲーション*/
+.hamberger_menu{
+  font-size: 30px;
+  font-family: 'Comic Sans MS', sans-serif;
+  color: #F0679B;
+  border-radius: 80px 80px 0px 0px / 50px 50px 0px 0px;
+    border: #F0679B double 5px;
+    margin-bottom: 100px;
+    padding: 20px;
+}
+.hamberger_bottom{
+  border-radius: 0px 0px 96px 96px / 0px 0px 57px 57px;
+  /* 96px 96px  / 57px 57px  */
+    border: #F0679B solid 2px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+#nav_target ul {
+    display: none;
+    /* ナビゲーション天地中央揃え */
+    position: absolute;
+    width: 80%;
+    height: 90%;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    background: white;
+    border-radius: 96px 96px 96px 96px / 57px 57px 57px 57px;
+    border: #F0679B solid 5px;;
+}
+
+#nav_target.panelactive ul {
+    display: block;
+}
+
+/*リストのレイアウト設定*/
+#nav_target ul li{
+	list-style: none;
+  text-align: center;
+}
+#nav_target ul .hamberger_menus{
+  text-align: center;
+  border-bottom: #000 dotted 2px;
+  width: 70%;
+  margin: 10px auto;
+}
+
+#nav_target ul li a{
+	color: #000000;
+  text-decoration: none;
+	padding:10px;
+	display: block;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	font-weight: bold;
+}
+
+#nav_target ul li a:hover{
+    color: #02ACA9;
+}
+
+/* メニュー箱とバツの装飾と位置 */
+.openbtn{
+  background-color: #FFA7CF;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  cursor: pointer;
+  position:fixed;
+  top:10px;
+  left: 3px;
+  z-index: 9999;
+  margin-left: 2%;
+  /* visibility: visible; */
+}
+
+/* 横線の位置 */
+.openbtn span:nth-child(1){
+    top: 15px;
+}
+.openbtn span:nth-child(2){
+    top: 23px;
+}
+.openbtn span:nth-child(3){
+    top: 31px;
+}
+/* spanで作るバツ */
+.openbtn span{
+    /* spanタグは高さが指定出来ないインライン要素なので */
+    display: inline-block;
+    transition: all .4s;
+    position: absolute;
+    left: 14px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: rgb(255, 255, 255);
+    width: 50%;
+}
+/* 回転と位置 */
+/* 一本目 */
+.active span:nth-child(1){
+    transform: translateY(6px) rotate(-45deg);
+    width: 50%;
+    top: 19px;
+    left: 15px;
+}
+/** 二本目を透明にする **/
+.active span:nth-child(2){
+    opacity: 0;
+}
+/*** 三本目 ***/
+.active span:nth-child(3){
+    transform: translateY(-6px) rotate(45deg);
+    width: 50%;
+    left: 15px;
+}
+/****************************************************************************************/
+
+/* top */
+
+
+
+
+
+/* -----footer------ */
+footer{
+  background-color: #A6E0E2;
+  height: 5vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #F0679B;
+  font-weight: bold;
+}
+/****** こんてんつたいとる *****/
+
+
+.title h3{
+    width: 200px;
+    padding: 20px;
+    margin: 5% auto;
+    border: solid 5px #A6E0E2;
+    border-radius: 50px 50px 50px 50px;
+    text-align: center;
+    background: #fd94c3;
+    color: white;
+  }
+.textbox{
+    padding: 20px;
+    text-align: center;
+    margin-right: 150px;
+}
+/* -----typing風ここから---- */
+.TextTyping span {
+	display: none;
+}
+/*文字列後ろの線の設定*/
+/* .TextTyping::after {
+ 	content: "|";
+	animation: typinganime .8s ease infinite;
+}
+@keyframes typinganime{
+	from{opacity:0}
+	to{opacity:1}
+} */
+/* -----typing風ここまで------ */
+/****** こんてんつ ******/
+.textbox div{
+   margin: 30px;
+   text-align: center;
+}
+
+.textbox .explain{
+   padding: 0 auto;
+}
+
+body{
+    background-image: url(../img/history/backgraund.jpg);
+    background-color:rgba(255,255,255,0.5);
+    background-blend-mode:lighten;
+    position: relative;
+}
+
+
+#works2_section{
+    width: 80%;
+    margin: 110px auto;
+}
+
+
+#works2_section h1{
+    font-family: 'Comic Sans MS', sans-serif;
+    font-size: 40px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+
+
+
+.container1{
+    margin: 70px auto;
+    margin-bottom: 10px;
+    display: grid;
+    grid-template-columns: 300px 300px 300px 300px;
+    grid-template-rows: 250px 250px 250px 250px 250px 250px 250px;
+    grid-template-areas: 
+    "box1 box1 box2 box3"
+    "box1 box1 box4 box4"
+    "box5 box6 box4 box4"
+    "box7 box7 box7 box8"
+    "box7 box7 box7 box9"
+    "box10 box10 box11 box9"
+    "box10 box10 box11 box9";
+    gap: 10px;
+}
+
+.item1{
+    background-image: url(./img-works/beachgirl.png);
+    grid-area: box1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.item2{
+    background-image: url(./img-works/ilasto2.jpg);
+    grid-area: box2;
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+}
+
+.item3{
+    background-image: url(./img-works/market2.jpg);
+    grid-area: box3;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.item4{
+    background-image: url(./img-works/venetia1改.jpg);
+    grid-area: box4;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.item5{
+    background-image: url(./img-works/tyukagai1改.jpg);
+    grid-area: box5;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.item6{
+    background-image: url(./img-works/miku2.png);
+    grid-area: box6;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.item7{
+    background-image: url(./img-works/shellbeach.jpg);
+    grid-area: box7;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.item8{
+    background-image: url(./img-works/saru.png);
+    grid-area: box8;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.item9{
+    background-image: url(./img-works/reilway.jpg);
+    grid-area: box9;
+    width: 103%;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+.item10{
+    background-image: url(./img-works/sanmarko.jpg);
+    grid-area: box10;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+.item11{
+    background-image: url(./img-works/market1.jpg);
+    grid-area: box11;
+    height: 57%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}

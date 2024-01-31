@@ -1,0 +1,139 @@
+@charset "utf-8";
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* normal */
+@font-face {
+    font-family: "myfont";
+    src: url("./font_honyajire/HonyaJi-Re.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+  /* bold */
+  @font-face {
+    font-family: "myfont";
+    src: url("./komadori_mini/komadori_mini/komadori-mini.otf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+  }
+  /* italic */
+  @font-face {
+    font-family: "myfont";
+    src: url("./komadori_mini/komadori_mini/komadori-mini.otf") format("truetype");
+    font-weight: normal;
+    font-style: italic;
+  }
+  /* カーソル */
+  img, #ansStartButton{
+    cursor: url(./11zon_cursol.cur), default;
+  }
+
+
+  /* 背景 */
+  .ichimatsu {
+    /* width: 70vw;  横幅を200pxに指定 */
+    height: 80vh; /* 高さを200pxに指定 */
+    background-image: linear-gradient(45deg, #a8fffc 25%, transparent 25%, transparent 75%, #ffbef6 75%),
+        linear-gradient(45deg, #a8fffc 25%, transparent 25%, transparent 75%, #a8fffc 75%); /* 市松模様になるようグラデーションで単色を入れる */
+    background-position: 0 0, 30px 30px;  /* 「0 0」と1マス（1色）の大きさ「30px 30px」をそれぞれ指定 */
+    background-size: 60px 60px;           /* 1マス分の倍の大きさを指定「60px 60px」 */
+    background-color: #FFF;               /* もう一つの単色を入れる */
+  }
+  
+  main{
+    max-width: 1024px;
+    margin: 5% auto;
+    /* width: 70%; */
+    text-align: center;
+    position: relative;
+  }
+
+  .top, .end{
+    top: 15%;
+    /* width: 70%; */
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #ansArea {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+#choices img{
+  width: 100%;
+  margin: 0 5%;
+}
+/* Existing styles for larger screens */
+.choices-wrapper {
+  display: flex;
+}
+
+/* New styles for 1024px or less */
+/* 1. 各選択肢のimagePathの比率をfoodの画像と同じにする */
+/* 2. CSSメディアクエリを使用して1024px以下の場合のスタイルを設定 */
+@media (max-width: 1024px) {
+  .choices-wrapper {
+    flex-direction: column; /* 縦方向に並べる */
+    width: 100%;
+  }
+  #ansArea{
+    margin: 0 30%;
+  }
+  #choices img  {
+    width: 50%;
+  }
+  .ichimatsu{
+    height: 100vh;
+  }
+}
+
+#explain, #countDown, #answer, #sponser{
+    max-width: 960px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 74px 75px 74px 74px / 55px 55px 55px 55px;
+    font-family: myfont;
+    font-size: 1.8rem;
+    color: #000000;
+    text-align: center;
+    line-height: 3.0rem;
+    margin: 10px auto;
+    padding: 2%;
+  }
+
+#countDown{
+  padding: 0;
+}
+
+#answer{
+  font-size: 2.0rem;
+}
+
+#ansStartButton{
+  width: auto;
+  overflow:visible;
+  padding:0;
+  margin:0;
+  background: none;
+  border:0;
+  font-size:0;
+  line-height:0;
+}
+  
+#ansStartButton img{
+  width: 60%;
+}
+
+.end{
+    margin: auto;
+    width: 1000px;
+    text-align: center;
+    position: relative;
+}

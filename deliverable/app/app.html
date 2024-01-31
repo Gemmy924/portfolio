@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>＜my App＞</title>
+    <link rel="stylesheet" href="./app.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <header>
+        <!-- jQueryを使い、ボタンをクリックしたら、ボタンとナビゲーションにそれぞれクラスを付与する。 -->
+        <!-- クラスが付与されたらCSSのアニメーションを使いボタンには開閉のアイコン変化の動きをつけ、 -->
+        <!-- ナビゲーションの背景を透過状態から不透明へ変更、ボックスの重なりを最背面から最前面に移動して出現させる。 -->
+        <div id="navi">
+            <div class="openbtn" id="target">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav id="nav_target">
+                <ul>
+                    <li><a href="../../index.html">＜TOP＞</a></li>
+                    <li><a href="../../about/about.html">＜ABOUT＞</a></li>
+                    <li><a href="../../index.html#Works">＜WORKS＞</a></li>
+                    <li><a href="../../index.html#Contact">＜CONTACT＞</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section id="history">
+            <div class="title">
+                <h3 class="TextTyping">＜App＞</h3>
+            </div>
+            <div class="phrase">
+                <h2>じぶんよう英会話フレーズ</h2>
+                <p>覚えたいフレーズを咄嗟にメモしてもどこに行ったかいつもわからなくなってしまう。<br> フレーズだけをメモして繰り返し覚えるのに便利。 フレーズ・訳・文法メモ、これだけあればいいっしょ。</p>
+                <img src="./phrase.png" alt="">
+            </div>
+            <div class="kiatu">
+                <h2>じぶんよう頭痛記録</h2>
+                <p>間違いなく気圧が原因の頭痛だ。そうにちがいない。 ・・・本当にそうだろうか？<br> 確証と頭痛にそなえるためのアプリ。 薬代が既にかさんでいるのに、頭痛記録アプリは有料とか。無理。</p>
+                <img src="./kiatu.png" alt="">
+            </div>
+
+        </section>
+    </main>
+        
+<footer>
+    <small>© Shigemi Koyasu All rights reserved.</small>
+</footer>
+
+<!-- hamberger js -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="../../about/about.js"></script>
+<!-- typing js -->
+    <script src="../../js/typewrite.js"></script>
+</body>
+</html>

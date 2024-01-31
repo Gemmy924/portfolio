@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <main>
+      <div class="ichimatsu">
+        <div class="top">
+            <div id="explain">
+              <p>だれかがねこのごはんをたべちゃった！</p>
+              <p>ねこからはなしをきいてそうさしよう！</p>
+            </div>
+            <button type="image" onclick="ansStart()" id="ansStartButton">
+              <img src="./img/mondai_ballon1.png" alt="" role="presentation" id="icon">
+            </button>
+        </div>
+    
+
+        <div id="ansArea">
+            <!-- 問題文 -->
+            <div id="choices">
+            <!------- 選択肢が表示される場所 --------->
+            </div>
+            <!-- タイマー -->
+            <p id="countDown"></p>
+
+            <!-- 正答数 -->
+            <div class="end">
+              <p id="answer"></p>
+              <p id="sponser"></p>
+            </div>
+          </div>
+      </div>
+    </main>
+    <script src="./script.js"></script>
+    
+</body>
+</html>
